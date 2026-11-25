@@ -4,7 +4,7 @@
 ## Project overview
 This repository holds my Week 1 training work. The weekly project analyses a small employee dataset in two parts:
 * **Part 1** (`week1/day5/`) cleans the data and explores it with tables. See the [Part 1 README](week1/day5/README.md).
-* **Part 2** (this README) turns the cleaned data into **five charts**, an executed **Jupyter notebook**, an **HTML report**,
+* **Part 2** (`week1/day5/afternoon/`, documented in this README) turns the cleaned data into **five charts**, an executed **Jupyter notebook**, an **HTML report**,
   a **one-page summary**, a **Streamlit dashboard** and a **five-minute presentation**.
 
 ## Objectives
@@ -25,26 +25,25 @@ The dataset has **no experience or joining-date column**, so two requested chart
 ## Repository structure
 ```text
 branch/
-├── notebooks/
-│   └── week1_day5_employee_customer_analysis.ipynb   # Part 2 notebook (executed)
-├── reports/
-│   ├── figures/                                       # five 200-dpi PNG charts
-│   ├── analysis_report.html                           # HTML export of the notebook
-│   ├── summary_report.md                              # one-page summary
-│   └── presentation.md                                # 5-minute talk with speaker notes
-├── src/
-│   └── employee_report.py                             # shared data loading + chart functions
-├── streamlit_app/
-│   └── app.py                                         # interactive dashboard
 ├── week1/
 │   ├── day4/
 │   │   ├── task1_terminal_jupyter/                    # terminal, VS Code, Jupyter + Matplotlib basics
 │   │   └── task2_data_analysis/                       # employee data kickoff analysis
-│   └── day5/                                          # Part 1: data cleaning + exploratory analysis
-│       ├── task1_data_cleaning/
-│       └── task2_exploratory_analysis/
+│   └── day5/
+│       ├── task1_data_cleaning/                       # Part 1: cleaning (clean_data.csv lives here)
+│       ├── task2_exploratory_analysis/                # Part 1: exploratory analysis
+│       └── afternoon/                                 # Part 2: visualisations, report, presentation
+│           ├── notebooks/
+│           │   └── week1_day5_employee_customer_analysis.ipynb
+│           ├── reports/
+│           │   ├── figures/                           # five 200-dpi PNG charts
+│           │   ├── analysis_report.html               # HTML export of the notebook
+│           │   ├── summary_report.md                  # one-page summary
+│           │   └── presentation.md                    # 5-minute talk with speaker notes
+│           ├── src/employee_report.py                 # shared data loading + chart functions
+│           ├── streamlit_app/app.py                   # interactive dashboard
+│           └── requirements.txt
 ├── chart_output/                                      # Day 4 Task 1 charts
-├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -53,7 +52,7 @@ branch/
 Python 3 · pandas · NumPy · Matplotlib · Jupyter Notebook / nbconvert · Streamlit · Git and GitHub
 
 ## The five visualisations
-| # | File (`reports/figures/`) | Chart | Notes |
+| # | File (`week1/day5/afternoon/reports/figures/`) | Chart | Notes |
 |---|---|---|---|
 | 1 | `01_department_salary_bar.png` | Bar: average salary by department | Includes a company-average reference line |
 | 2 | `02_salary_distribution_histogram.png` | Histogram: salary distribution | Bands of 10,000 |
@@ -69,7 +68,7 @@ All charts use one colour palette and say "currency not stated" on the salary ax
 3. **The city gap (Chennai/Hyderabad 68,000 vs Bangalore 48,500) probably reflects department mix.** Bangalore's staff are in HR and Sales.
 
 **Recommendations:** benchmark HR pay against the market, and collect experience, joining date, job level and currency for a larger sample.
-See [reports/summary_report.md](reports/summary_report.md) for details.
+See [summary_report.md](week1/day5/afternoon/reports/summary_report.md) for details.
 
 ## Install dependencies (Windows PowerShell)
 ```powershell
@@ -77,29 +76,29 @@ cd path\to\branch
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1        # if blocked: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+python -m pip install -r week1/day5/afternoon/requirements.txt
 ```
 
 ## Run the notebook
-Open `notebooks/week1_day5_employee_customer_analysis.ipynb` in VS Code or Jupyter and click **Run All**. You can also run it from the terminal:
+Open `week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb` in VS Code or Jupyter and click **Run All**. You can also run it from the terminal:
 ```powershell
-python -m nbconvert --to notebook --execute --inplace notebooks/week1_day5_employee_customer_analysis.ipynb
+python -m nbconvert --to notebook --execute --inplace week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb
 ```
 To regenerate only the five PNG files:
 ```powershell
-python src/employee_report.py
+python week1/day5/afternoon/src/employee_report.py
 ```
 
 ## Export the HTML report
 ```powershell
-python -m nbconvert --to html notebooks/week1_day5_employee_customer_analysis.ipynb --output analysis_report --output-dir reports
+python -m nbconvert --to html week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb --output analysis_report --output-dir week1/day5/afternoon/reports
 ```
 (`jupyter nbconvert --to html ...` works the same way if the `jupyter` command is on your PATH.)
 
 ## Launch the Streamlit dashboard
 ```powershell
-streamlit run streamlit_app/app.py
-# or: python -m streamlit run streamlit_app/app.py
+streamlit run week1/day5/afternoon/streamlit_app/app.py
+# or: python -m streamlit run week1/day5/afternoon/streamlit_app/app.py
 ```
 It opens at http://localhost:8501. Use the department filter at the top. The KPIs and charts update automatically.
 

@@ -1,7 +1,7 @@
 """Week 1 - Day 5 - Streamlit dashboard for the employee salary analysis.
 
-Run from the repository root:
-    streamlit run streamlit_app/app.py
+Run from the repository root (or use the path from any folder):
+    streamlit run week1/day5/afternoon/streamlit_app/app.py
 
 Uses the same cleaned data (Part 1 output) and the same chart functions
 (src/employee_report.py) as the notebook, so the numbers always match.

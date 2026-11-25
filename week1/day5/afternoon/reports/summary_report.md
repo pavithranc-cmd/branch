@@ -1,5 +1,5 @@
 # Employee Salary Analysis – One-Page Summary
-**Week 1 · Day 5 · Weekly Project (Part 2)** · Source notebook: `notebooks/week1_day5_employee_customer_analysis.ipynb`
+**Week 1 · Day 5 · Weekly Project (Part 2)** · Source notebook: `week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb`
 
 ## 1. Problem Statement
 How are salaries distributed across departments and cities? Is pay concentrated in a few people, and are there outliers?

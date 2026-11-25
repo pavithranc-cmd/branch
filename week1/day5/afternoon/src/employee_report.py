@@ -1,8 +1,8 @@
 """Week 1 - Day 5 - Part 2: shared data + chart helpers.
 
 Used by BOTH:
-  * notebooks/week1_day5_employee_customer_analysis.ipynb
-  * streamlit_app/app.py
+  * week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb
+  * week1/day5/afternoon/streamlit_app/app.py
 so the notebook, the saved PNG files and the dashboard always show the same numbers.
 
 Data source (no copies are made):
@@ -20,10 +20,11 @@ from matplotlib.ticker import FuncFormatter, PercentFormatter
 # ---------------------------------------------------------------------------
 # Paths - all relative to this file, so the project works on any computer.
 # ---------------------------------------------------------------------------
-REPO_ROOT = Path(__file__).resolve().parents[1]
-PART1_DIR = REPO_ROOT / "week1" / "day5" / "task1_data_cleaning"
+PROJECT_DIR = Path(__file__).resolve().parents[1]     # .../week1/day5/afternoon
+DAY5_DIR = PROJECT_DIR.parent                          # .../week1/day5
+PART1_DIR = DAY5_DIR / "task1_data_cleaning"
 CLEAN_FILE = PART1_DIR / "data" / "clean_data.csv"
-FIGURES_DIR = REPO_ROOT / "reports" / "figures"
+FIGURES_DIR = PROJECT_DIR / "reports" / "figures"
 
 # Salary currency and pay period are NOT stated in the dataset, so we never guess them.
 SALARY_LABEL = "Salary (currency not stated)"
@@ -302,7 +303,7 @@ CHARTS = {
 
 
 if __name__ == "__main__":
-    # Quick way to regenerate all five PNG files: python src/employee_report.py
+    # Quick way to regenerate all five PNG files: python week1/day5/afternoon/src/employee_report.py
     apply_style()
     data = load_clean_data()
     for name, chart in CHARTS.items():

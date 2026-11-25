@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f8c34c25">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23143449">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7812,7 +7812,7 @@ all call the same functions, so they always show the same numbers.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50cff088">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=646d2b77">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7829,7 +7829,7 @@ all call the same functions, so they always show the same numbers.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bddd0d3a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1c03b4c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7873,18 +7873,18 @@ all call the same functions, so they always show the same numbers.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9d6929b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a9edf9d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Data-Loading">4. Data Loading<a class="anchor-link" href="#4.-Data-Loading">¶</a></h2><p>The project root is found automatically (the folder that contains <code>src/employee_report.py</code>), so the notebook runs on any computer
+<h2 id="4.-Data-Loading">4. Data Loading<a class="anchor-link" href="#4.-Data-Loading">¶</a></h2><p>The project folder (<code>week1/day5/afternoon</code>) is found automatically as the folder that contains <code>src/employee_report.py</code>, so the notebook runs on any computer
 without hard-coded paths. <code>load_clean_data()</code> reads the Part 1 output. If that file were missing, it would re-run the Part 1 cleaning pipeline instead.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=48a451e9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ccfa8b31">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7908,7 +7908,8 @@ without hard-coded paths. <code>load_clean_data()</code> reads the Part 1 output
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"display.float_format"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{:,.0f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">er</span><span class="o">.</span><span class="n">load_clean_data</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> rows x </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns from </span><span class="si">{</span><span class="n">er</span><span class="o">.</span><span class="n">CLEAN_FILE</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">REPO</span> <span class="o">=</span> <span class="n">er</span><span class="o">.</span><span class="n">DAY5_DIR</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># repository root, used only to print short paths</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> rows x </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns from </span><span class="si">{</span><span class="n">er</span><span class="o">.</span><span class="n">CLEAN_FILE</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">REPO</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -8036,7 +8037,7 @@ without hard-coded paths. <code>load_clean_data()</code> reads the Part 1 output
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3711653b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7746d4f7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8047,7 +8048,7 @@ what the <strong>Part 1 cleaning pipeline</strong> produces today (re-using <cod
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=237dcef2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c7cdc094">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8097,7 +8098,7 @@ Columns requested by the brief but not in the data: ['experience', 'years_experi
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff732da1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=379b9414">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8107,7 +8108,7 @@ Columns requested by the brief but not in the data: ['experience', 'years_experi
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b874cf2c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=01117f9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8313,7 +8314,7 @@ By department:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ae08c6a2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=107c312f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8324,7 +8325,7 @@ By department:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7ecf5a0a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8a71209e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8347,7 +8348,7 @@ By department:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4fb0e0f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=662c357c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8357,7 +8358,7 @@ By department:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bb499a1a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d35aeb5b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8398,7 +8399,7 @@ Insight: Finance has the highest average salary (81,000, but only 1 employee), 1
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a21a991e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ab5b1af">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8408,7 +8409,7 @@ Insight: Finance has the highest average salary (81,000, but only 1 employee), 1
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb9a12a4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b458a4ae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8448,7 +8449,7 @@ Insight: Salaries range from 45,000 to 81,000; 6 of 8 employees (75%) earn below
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=960cf7aa">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb45a80b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8458,7 +8459,7 @@ Insight: Salaries range from 45,000 to 81,000; 6 of 8 employees (75%) earn below
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6cf615ed">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d4e87b9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8499,7 +8500,7 @@ Insight: Chennai and Hyderabad have the highest city average (68,000) and Bangal
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff82923b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f7ee57c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8509,7 +8510,7 @@ Insight: Chennai and Hyderabad have the highest city average (68,000) and Bangal
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1c02d6cd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d79a8606">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8549,7 +8550,7 @@ Insight: The lowest-paid 50% of staff receive 41.3% of payroll and the top 25% r
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6403915">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37ee9163">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8559,7 +8560,7 @@ Insight: The lowest-paid 50% of staff receive 41.3% of payroll and the top 25% r
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0198a9b8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fd251e30">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8599,7 +8600,7 @@ Insight: 0 salaries fall outside the outlier fences (22,875-97,875); IT has the 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12f77833">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8907fc64">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8609,7 +8610,7 @@ Insight: 0 salaries fall outside the outlier fences (22,875-97,875); IT has the 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1cf6192c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bd415f2b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8643,7 +8644,7 @@ Insight: 0 salaries fall outside the outlier fences (22,875-97,875); IT has the 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7515a871">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e019a669">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8653,7 +8654,7 @@ Insight: 0 salaries fall outside the outlier fences (22,875-97,875); IT has the 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fbe26165">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6f86aae2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8828,7 +8829,7 @@ Insight: 0 salaries fall outside the outlier fences (22,875-97,875); IT has the 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41b985f0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=741cb238">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8846,7 +8847,7 @@ two employees work in HR and Sales, the two lowest-paid departments, so with 8 r
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41806d0b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bdfe6ca0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8863,7 +8864,7 @@ and we can test whether the department and city gaps are explained by seniority.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f969bf7b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a84722c5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8880,7 +8881,7 @@ and we can test whether the department and city gaps are explained by seniority.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31d4e498">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d4306aa5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8889,7 +8890,7 @@ and we can test whether the department and city gaps are explained by seniority.
 <h2 id="15.-Conclusion">15. Conclusion<a class="anchor-link" href="#15.-Conclusion">¶</a></h2><p>The cleaned Part 1 dataset was turned into five labelled, high-resolution charts. They show that <strong>department is the main visible driver
 of salary</strong>: HR is clearly the lowest-paid group. Overall pay is evenly spread, with no outliers. The biggest next step is better data
 (experience, dates, more employees), so that pay differences can be explained rather than only described.</p>
-<p><strong>Outputs:</strong> <code>reports/figures/*.png</code> · <code>reports/summary_report.md</code> · <code>reports/analysis_report.html</code> · <code>streamlit_app/app.py</code> · <code>reports/presentation.md</code></p>
+<p><strong>Outputs:</strong> all inside <code>week1/day5/afternoon/</code>: <code>reports/figures/*.png</code> · <code>reports/summary_report.md</code> · <code>reports/analysis_report.html</code> · <code>streamlit_app/app.py</code> · <code>reports/presentation.md</code></p>
 </div>
 </div>
 </div>
