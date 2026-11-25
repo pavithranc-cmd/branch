@@ -1,10 +1,10 @@
 """Week 1 - Day 5 - Streamlit dashboard for the employee salary analysis.
 
 Run from the repository root (or use the path from any folder):
-    streamlit run week1/day5/afternoon/streamlit_app/app.py
+    streamlit run week1/day5/afternoon/bonus_streamlit_app/app.py
 
 Uses the same cleaned data (Part 1 output) and the same chart functions
-(src/employee_report.py) as the notebook, so the numbers always match.
+(task1_visualisations/src/employee_report.py) as the notebook, so the numbers always match.
 """
 import sys
 from pathlib import Path
@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Make src/ importable no matter which folder Streamlit is started from
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "task1_visualisations" / "src"))
 import employee_report as er  # noqa: E402
 
 st.set_page_config(page_title="Employee Salary Dashboard", page_icon="📊", layout="wide")

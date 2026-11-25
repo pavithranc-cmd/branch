@@ -1,7 +1,7 @@
 # Employee Salary Analysis – 5-Minute Presentation
 **Week 1 · Day 5 · Weekly Project (Part 2)**
 
-Charts are in `week1/day5/afternoon/reports/figures/`. Open the dashboard with `streamlit run week1/day5/afternoon/streamlit_app/app.py` if you want to show it live.
+Charts are in `week1/day5/afternoon/task1_visualisations/reports/figures/`. Open the dashboard with `streamlit run week1/day5/afternoon/bonus_streamlit_app/app.py` if you want to show it live.
 
 ---
 

@@ -32,16 +32,18 @@ branch/
 │   └── day5/
 │       ├── task1_data_cleaning/                       # Part 1: cleaning (clean_data.csv lives here)
 │       ├── task2_exploratory_analysis/                # Part 1: exploratory analysis
-│       └── afternoon/                                 # Part 2: visualisations, report, presentation
-│           ├── notebooks/
-│           │   └── week1_day5_employee_customer_analysis.ipynb
-│           ├── reports/
-│           │   ├── figures/                           # five 200-dpi PNG charts
-│           │   ├── analysis_report.html               # HTML export of the notebook
-│           │   ├── summary_report.md                  # one-page summary
-│           │   └── presentation.md                    # 5-minute talk with speaker notes
-│           ├── src/employee_report.py                 # shared data loading + chart functions
-│           ├── streamlit_app/app.py                   # interactive dashboard
+│       └── afternoon/                                 # Part 2
+│           ├── task1_visualisations/                  # TASK 1: five visualisations
+│           │   ├── notebooks/week1_day5_employee_customer_analysis.ipynb
+│           │   ├── reports/figures/                   # five 200-dpi PNG charts
+│           │   ├── src/employee_report.py             # shared data loading + chart functions
+│           │   └── README.md
+│           ├── task2_report_presentation/             # TASK 2: report and presentation
+│           │   ├── reports/summary_report.md          # one-page summary
+│           │   ├── reports/analysis_report.html       # HTML export of the Task 1 notebook
+│           │   ├── reports/presentation.md            # 5-minute talk with speaker notes
+│           │   └── README.md
+│           ├── bonus_streamlit_app/app.py             # BONUS: Streamlit dashboard
 │           └── requirements.txt
 ├── chart_output/                                      # Day 4 Task 1 charts
 ├── .gitignore
@@ -52,7 +54,7 @@ branch/
 Python 3 · pandas · NumPy · Matplotlib · Jupyter Notebook / nbconvert · Streamlit · Git and GitHub
 
 ## The five visualisations
-| # | File (`week1/day5/afternoon/reports/figures/`) | Chart | Notes |
+| # | File (`week1/day5/afternoon/task1_visualisations/reports/figures/`) | Chart | Notes |
 |---|---|---|---|
 | 1 | `01_department_salary_bar.png` | Bar: average salary by department | Includes a company-average reference line |
 | 2 | `02_salary_distribution_histogram.png` | Histogram: salary distribution | Bands of 10,000 |
@@ -68,7 +70,7 @@ All charts use one colour palette and say "currency not stated" on the salary ax
 3. **The city gap (Chennai/Hyderabad 68,000 vs Bangalore 48,500) probably reflects department mix.** Bangalore's staff are in HR and Sales.
 
 **Recommendations:** benchmark HR pay against the market, and collect experience, joining date, job level and currency for a larger sample.
-See [summary_report.md](week1/day5/afternoon/reports/summary_report.md) for details.
+See [summary_report.md](week1/day5/afternoon/task2_report_presentation/reports/summary_report.md) for details.
 
 ## Install dependencies (Windows PowerShell)
 ```powershell
@@ -79,26 +81,26 @@ python -m pip install --upgrade pip
 python -m pip install -r week1/day5/afternoon/requirements.txt
 ```
 
-## Run the notebook
-Open `week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb` in VS Code or Jupyter and click **Run All**. You can also run it from the terminal:
+## Task 1: run the notebook
+Open `week1/day5/afternoon/task1_visualisations/notebooks/week1_day5_employee_customer_analysis.ipynb` in VS Code or Jupyter and click **Run All**. You can also run it from the terminal:
 ```powershell
-python -m nbconvert --to notebook --execute --inplace week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb
+python -m nbconvert --to notebook --execute --inplace week1/day5/afternoon/task1_visualisations/notebooks/week1_day5_employee_customer_analysis.ipynb
 ```
 To regenerate only the five PNG files:
 ```powershell
-python week1/day5/afternoon/src/employee_report.py
+python week1/day5/afternoon/task1_visualisations/src/employee_report.py
 ```
 
-## Export the HTML report
+## Task 2: export the HTML report
 ```powershell
-python -m nbconvert --to html week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb --output analysis_report --output-dir week1/day5/afternoon/reports
+python -m nbconvert --to html week1/day5/afternoon/task1_visualisations/notebooks/week1_day5_employee_customer_analysis.ipynb --output analysis_report --output-dir week1/day5/afternoon/task2_report_presentation/reports
 ```
 (`jupyter nbconvert --to html ...` works the same way if the `jupyter` command is on your PATH.)
 
-## Launch the Streamlit dashboard
+## Bonus: launch the Streamlit dashboard
 ```powershell
-streamlit run week1/day5/afternoon/streamlit_app/app.py
-# or: python -m streamlit run week1/day5/afternoon/streamlit_app/app.py
+streamlit run week1/day5/afternoon/bonus_streamlit_app/app.py
+# or: python -m streamlit run week1/day5/afternoon/bonus_streamlit_app/app.py
 ```
 It opens at http://localhost:8501. Use the department filter at the top. The KPIs and charts update automatically.
 
