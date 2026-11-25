@@ -15,3 +15,7 @@ env/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Streamlit / secrets
+.streamlit/secrets.toml
+.env
