@@ -1,0 +1,7 @@
+metric,before,after,decision_or_note
+Rows,8,8,Rows removed only for duplicates or a missing id.
+Missing values (all cells),0,0,Each column follows its documented missing-value rule.
+Exact duplicate rows,0,0,Checked again after text standardisation.
+Duplicate ids,0,0,id is the unique key.
+Distinct city values,6,4,Chennai / chennai / CHENNAI were one city written three ways.
+salary IQR outliers,0,0,"Q1=51,000, Q3=69,750, IQR=18,750, bounds [22,875, 97,875]. No outliers found - nothing changed."

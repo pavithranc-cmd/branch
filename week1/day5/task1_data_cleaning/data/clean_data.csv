@@ -1,0 +1,9 @@
+id,name,department,salary,city,salary_outlier
+1,Arun,Sales,65000,Chennai,False
+2,Priya,HR,45000,Bangalore,False
+3,Karthik,IT,58000,Chennai,False
+4,Divya,IT,75000,Mumbai,False
+5,Rohan,Finance,81000,Chennai,False
+6,Meena,Sales,52000,Bangalore,False
+7,Suresh,IT,68000,Hyderabad,False
+8,Anitha,HR,48000,Mumbai,False

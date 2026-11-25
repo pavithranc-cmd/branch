@@ -1,0 +1,5 @@
+# Week 1 Day 5 - install with:  python -m pip install -r requirements.txt
+pandas>=2.0        # cleaning and analysis (tested with 3.1.1)
+numpy>=1.24        # installed with pandas (tested with 2.5.5)
+matplotlib>=3.10   # box plot in data_cleaning.ipynb (tested with 3.11.2)
+jupyter>=1.0       # run the notebooks (includes ipykernel and nbconvert)
