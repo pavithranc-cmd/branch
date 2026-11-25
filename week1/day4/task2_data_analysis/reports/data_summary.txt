@@ -1,0 +1,119 @@
+Employee Data Analysis - Week 1 Day 4 Task 2
+Dataset: employees.csv
+
+======================================================================
+1. First five rows - df.head()
+======================================================================
+   id     name department  salary       city
+0   1     Arun      Sales   65000    Chennai
+1   2    Priya         HR   45000  Bangalore
+2   3  Karthik         IT   58000    chennai
+3   4    Divya         IT   75000     Mumbai
+4   5    Rohan    Finance   81000    CHENNAI
+
+======================================================================
+2. Shape - df.shape
+======================================================================
+8 rows x 5 columns
+
+======================================================================
+3. Info - df.info()
+======================================================================
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column      Non-Null Count  Dtype
+---  ------      --------------  -----
+ 0   id          8 non-null      int64
+ 1   name        8 non-null      str  
+ 2   department  8 non-null      str  
+ 3   salary      8 non-null      int64
+ 4   city        8 non-null      str  
+dtypes: int64(2), str(3)
+memory usage: 452.0 bytes
+
+======================================================================
+4. Summary statistics - df.describe(include="all")
+======================================================================
+             id  name department        salary       city
+count   8.00000     8          8      8.000000          8
+unique      NaN     8          4           NaN          6
+top         NaN  Arun         IT           NaN  Bangalore
+freq        NaN     1          3           NaN          2
+mean    4.50000   NaN        NaN  61500.000000        NaN
+std     2.44949   NaN        NaN  12950.455039        NaN
+min     1.00000   NaN        NaN  45000.000000        NaN
+25%     2.75000   NaN        NaN  51000.000000        NaN
+50%     4.50000   NaN        NaN  61500.000000        NaN
+75%     6.25000   NaN        NaN  69750.000000        NaN
+max     8.00000   NaN        NaN  81000.000000        NaN
+
+======================================================================
+5. Missing values per column - df.isna().sum()
+======================================================================
+id            0
+name          0
+department    0
+salary        0
+city          0
+Total missing values: 0
+
+======================================================================
+6. Duplicate rows - df.duplicated().sum()
+======================================================================
+Fully duplicated rows: 0
+Duplicated employee ids: 0
+
+======================================================================
+7. Column names and data types - df.dtypes
+======================================================================
+Columns: ['id', 'name', 'department', 'salary', 'city']
+id            int64
+name            str
+department      str
+salary        int64
+city            str
+
+======================================================================
+8. Data-quality check - city spellings
+======================================================================
+Raw city values: ['Bangalore', 'CHENNAI', 'Chennai', 'Hyderabad', 'Mumbai', 'chennai']
+After .str.strip().str.title(): ['Bangalore', 'Chennai', 'Hyderabad', 'Mumbai']
+Unique cities raw: 6  ->  cleaned: 4
+
+======================================================================
+BUSINESS QUESTIONS
+======================================================================
+
+Q1. What is the average salary across all employees?
+    Average salary: 61,500.00  (median 61,500, min 45,000, max 81,000)
+
+Q2. Which department has the highest average salary?
+            employees  avg_salary
+department                       
+Finance             1     81000.0
+IT                  3     67000.0
+Sales               2     58500.0
+HR                  2     46500.0
+    -> Highest: Finance - 81,000.00
+
+Q3. Which city has the highest average salary? (cities cleaned)
+           employees  avg_salary  min_salary  max_salary
+city                                                    
+Chennai            3     68000.0       58000       81000
+Hyderabad          1     68000.0       68000       68000
+Mumbai             2     61500.0       48000       75000
+Bangalore          2     48500.0       45000       52000
+    -> Highest: Chennai, Hyderabad - 68,000.00 (tie)
+
+Q4. Which employee has the highest salary?
+    Rohan (id 5, Finance, Chennai) - salary 81,000
+
+Q5. How many employees work in each department and each city?
+city        Bangalore  Chennai  Hyderabad  Mumbai  Total
+department                                              
+Finance             0        1          0       0      1
+HR                  1        0          0       1      2
+IT                  0        1          1       1      3
+Sales               1        1          0       0      2
+Total               2        3          1       2      8
