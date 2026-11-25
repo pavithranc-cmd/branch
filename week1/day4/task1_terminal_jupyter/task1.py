@@ -8,24 +8,26 @@ Draws 4 charts from employees.csv and saves each as a PNG:
 Bonus: all four on one figure with plt.subplots(2, 2).
 
 How to run (in the normal terminal, NOT at the >>> Python prompt):
-    python charts.py
-It also works with the VS Code Run button or pasted into a Jupyter cell.
+    python week1/day4/task1_terminal_jupyter/task1.py
+It also works with the VS Code Run button, or from notebooks/task1.ipynb.
+Charts are saved to the repository-level chart_output/ folder.
 """
 import os
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# ---------- 1. load the data ----------
-# Put the full path to your Day 3 file here if you want, e.g.
-# CSV_FILE = r"E:\GEN AI PYTHON\GenAi_Training\day3\employees.csv"
-CSV_FILE = None
-
 # Folder this script is in (falls back to the current folder in Jupyter)
 try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     script_dir = os.getcwd()
+
+# ---------- 1. load the data ----------
+# Default dataset: project/data/employees.csv, relative to this script.
+CSV_FILE = os.path.join(script_dir, "project", "data", "employees.csv")
+if not os.path.isfile(CSV_FILE):
+    CSV_FILE = None  # fall back to searching nearby folders below
 
 csv_path = CSV_FILE
 if not csv_path:
@@ -96,8 +98,10 @@ else:
                    64000, 71000, 105000, 57000, 55000, 69000, 95000, 52000, 66000, 73000],
     })
 
-# Output folder for the PNG files (created next to this script)
-out_dir = os.path.join(script_dir, "chart_output")
+# Output folder for the PNG files: <repo root>/chart_output
+# (this script lives in <repo root>/week1/day4/task1_terminal_jupyter/)
+repo_root = os.path.abspath(os.path.join(script_dir, "..", "..", ".."))
+out_dir = os.path.join(repo_root, "chart_output")
 os.makedirs(out_dir, exist_ok=True)
 
 avg_salary = df.groupby("department")["salary"].mean().sort_values(ascending=False)
