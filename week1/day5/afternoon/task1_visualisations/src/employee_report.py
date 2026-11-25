@@ -1,8 +1,8 @@
 """Week 1 - Day 5 - Part 2: shared data + chart helpers.
 
 Used by BOTH:
-  * week1/day5/afternoon/notebooks/week1_day5_employee_customer_analysis.ipynb
-  * week1/day5/afternoon/streamlit_app/app.py
+  * week1/day5/afternoon/task1_visualisations/notebooks/week1_day5_employee_customer_analysis.ipynb
+  * week1/day5/afternoon/bonus_streamlit_app/app.py
 so the notebook, the saved PNG files and the dashboard always show the same numbers.
 
 Data source (no copies are made):
@@ -20,8 +20,8 @@ from matplotlib.ticker import FuncFormatter, PercentFormatter
 # ---------------------------------------------------------------------------
 # Paths - all relative to this file, so the project works on any computer.
 # ---------------------------------------------------------------------------
-PROJECT_DIR = Path(__file__).resolve().parents[1]     # .../week1/day5/afternoon
-DAY5_DIR = PROJECT_DIR.parent                          # .../week1/day5
+PROJECT_DIR = Path(__file__).resolve().parents[1]     # .../week1/day5/afternoon/task1_visualisations
+DAY5_DIR = PROJECT_DIR.parents[1]                      # .../week1/day5
 PART1_DIR = DAY5_DIR / "task1_data_cleaning"
 CLEAN_FILE = PART1_DIR / "data" / "clean_data.csv"
 FIGURES_DIR = PROJECT_DIR / "reports" / "figures"
@@ -303,7 +303,7 @@ CHARTS = {
 
 
 if __name__ == "__main__":
-    # Quick way to regenerate all five PNG files: python week1/day5/afternoon/src/employee_report.py
+    # Quick way to regenerate all five PNG files: python week1/day5/afternoon/task1_visualisations/src/employee_report.py
     apply_style()
     data = load_clean_data()
     for name, chart in CHARTS.items():
