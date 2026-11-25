@@ -1,0 +1,2 @@
+column,count,mean,median,min,max,std
+salary,8.0,61500.0,61500.0,45000.0,81000.0,12950.46
